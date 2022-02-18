@@ -59,6 +59,10 @@ In order to run this project and extend its functionalities you need to follow s
    ```sh
    npm install
    ```
+3. Add a **.env** file
+   ```sh
+   CONNECTION_STRING="MongoDb connection string"
+   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
