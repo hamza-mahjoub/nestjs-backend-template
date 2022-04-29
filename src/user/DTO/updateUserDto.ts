@@ -1,72 +1,65 @@
 import {
-  IsNotEmpty,
   MinLength,
   MaxLength,
   IsEmail,
   IsString,
   ValidateNested,
   IsLowercase,
+  IsOptional,
 } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class Address {
-  @IsNotEmpty()
+  @IsOptional()
   readonly city: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   readonly country: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   readonly postalCode: string;
 
-  @IsNotEmpty()
+  @IsOptional()
   readonly address: string;
 }
-export class CreateUserDto {
+export class UpdateUserDto {
   //name
-  @IsNotEmpty()
   @IsString()
   @MinLength(3)
   @MaxLength(100)
+  @IsOptional()
   readonly name: string;
 
   //firstName
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MinLength(3)
   @MaxLength(100)
   readonly firstName: string;
 
   //username
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MinLength(3)
   @MaxLength(100)
   readonly username: string;
 
   //email
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MinLength(6)
   @IsLowercase()
   @IsEmail()
   readonly email: string;
 
-  //password
-  @IsNotEmpty()
-  @IsString()
-  @MinLength(8)
-  @MaxLength(32)
-  readonly password: string;
-
   //fullAddress
-  @IsNotEmpty()
+  @IsOptional()
   @Type(() => Address)
   @ValidateNested()
   readonly fullAddress: Address;
 
   //phoneNumber
-  @IsNotEmpty()
+  @IsOptional()
   @IsString()
   @MinLength(8)
   @MaxLength(8)

@@ -4,8 +4,8 @@ import { ROLE, STATUS } from '../../utils/constants';
 
 export const UserSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    firstName: { type: String, required: true },
+    name: { type: String, minlength: 3, maxlength: 100, required: true },
+    firstName: { type: String, minlength: 3, maxlength: 100, required: true },
     email: {
       type: String,
       required: true,
@@ -13,21 +13,11 @@ export const UserSchema = new mongoose.Schema(
       maxlength: 255,
       minlength: 6,
       unique: true,
-      match: [
-        /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-        'Please fill a valid email address',
-      ],
     },
+
     password: {
       type: String,
-      minlength: 8,
-      maxlength: 32,
       required: true,
-      match: [
-        //Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-        'Please fill a valid email address',
-      ],
     },
     username: { type: String, required: true },
     role: {
