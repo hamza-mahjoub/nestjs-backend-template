@@ -82,9 +82,9 @@ Examples will be provided to showcase some features of this project.
 - ✅ [Morgan middleware](https://www.npmjs.com/package/morgan)
 - ✅ Setting up Configuration **.env** .
 - ✅ Setting up **MongoDB** Database.
-- 🔲 User Module
-    - 🔲 User model.
-    - 🔲 CRUD **(Create,Read,Update,Delete)**
+- ✅ User Module
+    - ✅ User model.
+    - ✅ CRUD **(Create,Read,Update,Delete)**
 - 🔲 [Swagger](https://swagger.io/).
 - 🔲 Authentification Module.
 - 🔲 Mailing Service.
