@@ -62,6 +62,8 @@ In order to run this project and extend its functionalities you need to follow s
 3. Add a **.env** file
    ```sh
    CONNECTION_STRING="MongoDb connection string"
+   APPLICATION_PORT = 3000  // port is 3000 by default.
+   MORGAN_ENV = "dev"
    ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -77,7 +79,7 @@ Examples will be provided to showcase some features of this project.
 
 ## Roadmap
 
-- ✅ Morgan middleware.
+- ✅ [Morgan middleware](https://www.npmjs.com/package/morgan)
 - ✅ Setting up Configuration **.env** .
 - ✅ Setting up **MongoDB** Database.
 - 🔲 User Module
