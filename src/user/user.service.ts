@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { CrudService } from 'src/shared/crud.service';
+import { CrudService } from '../shared/crud.service';
 import { CreateUserDto } from './DTO/createUserDto';
 import { User } from './Model/user.entity';
 import { UpdateUserDto } from './DTO/updateUserDto';
@@ -29,19 +29,17 @@ export class UserService extends CrudService<User> {
     return this.create({ ...newUser, password: hashedPassword });
   }
 
-  async update(id, updateUser: UpdateUserDto) {
+  async updateUser(id, updateUser: UpdateUserDto) {
     const existingUser = await this.get(id);
     if (existingUser) {
       if (updateUser.email !== undefined) {
         const existingEmailUser = await this.findOne('email', updateUser.email);
-        console.log(updateUser.email);
         if (existingEmailUser)
           throw new HttpException(
             'Email already in use!',
             HttpStatus.PRECONDITION_FAILED,
           );
       }
-
       return this.updateById(id, updateUser);
     } else
       throw new HttpException(

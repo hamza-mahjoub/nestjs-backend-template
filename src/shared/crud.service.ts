@@ -36,6 +36,6 @@ export class CrudService<T> {
   }
 
   async updateById(id, newObj) {
-    return this.crudModel.findByIdAndUpdate(id, { ...newObj },{ new: true });
+    return this.crudModel.findByIdAndUpdate(id, { ...newObj }, { new: true });
   }
 }

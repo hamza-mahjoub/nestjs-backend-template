@@ -38,10 +38,10 @@ export class UserController {
 
   @Post('/:id')
   async updateUserById(@Param('id') id, @Body() updateUser: UpdateUserDto) {
-    return await this.userService.update(id, updateUser);
+    return await this.userService.updateUser(id, updateUser);
   }
 
-  @Patch('/id')
+  @Patch('/:id')
   async updateUserPasswordById(
     @Param('id') id,
     @Body() newPassword: EditPasswordDto,
