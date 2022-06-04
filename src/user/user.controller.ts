@@ -37,8 +37,8 @@ export class UserController {
   }
 
   @Post('/:id')
-  async updateUserById(@Param('id') id, @Body() updateUser: UpdateUserDto) {
-    return await this.userService.updateUser(id, updateUser);
+  async updateUserById(@Param('id') id, @Body() updatedUser: UpdateUserDto) {
+    return await this.userService.updateUser(id, updatedUser);
   }
 
   @Patch('/:id')

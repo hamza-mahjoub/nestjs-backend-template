@@ -27,7 +27,7 @@ describe('UserController', () => {
           .fn()
           .mockResolvedValue(userStub(USER_STUB_ID, USER_STUB_EMAIL)),
         deleteById: jest.fn().mockResolvedValue({ deletedCount: 1 }),
-        update: jest
+        updateUser: jest
           .fn()
           .mockResolvedValue(userStub(USER_STUB_ID, 'FlenBenFelten')),
         updatePassword: jest
