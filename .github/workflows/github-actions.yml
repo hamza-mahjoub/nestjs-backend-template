@@ -14,6 +14,7 @@ jobs:
       - name: 'Create .env file'
         run: |
           touch .env
-          echo CONNECTION_STRING=${{ secrets.MONGO_DB_CONNECTION_STRING }} >> .env
-          ls ${{ github.workspace }}
+          echo CONNECTION_STRING="${{ secrets.MONGO_DB_CONNECTION_STRING }}" >> .env
+      - name: 'check repo'
+        run: ls ${{ github.workspace }}
       - run: npm test
