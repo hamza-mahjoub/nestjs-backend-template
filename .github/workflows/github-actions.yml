@@ -10,9 +10,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install
-      - name: 'Create env file'
+      # - run: npm install
+      - name: 'Create .env file'
         run: |
           touch .env
           echo CONNECTION_STRING=${{ secrets.MONGO_DB_CONNECTION_STRING }} >> .env
+          ls ${{ github.workspace }}
       - run: npm test
