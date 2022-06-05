@@ -41,7 +41,7 @@ jobs:
         run: |
           touch .env
           echo CONNECTION_STRING="${{ secrets.MONGO_DB_CONNECTION_STRING }}" >> .env
-          echo APPLICATION_PORT = "3000" >> .env
+          echo APPLICATION_PORT = 3000 >> .env
           echo MORGAN_ENV = "dev" >> .env
       - name: Build and push
         uses: docker/build-push-action@v2
