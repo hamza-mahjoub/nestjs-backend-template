@@ -16,10 +16,11 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#tests">Tests</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#tests">Tests</a></li>
+    <li><a href="#tests">CI/CD pipeline</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -78,6 +79,37 @@ In order to run this project and extend its functionalities you need to follow s
    npm run start:dev
    ```
 Examples will be provided to showcase some features of this project.
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- Tests EXAMPLES -->
+## Usage
+- Run the tests using 
+```sh
+   npm run test
+   ```
+   
+The user module is subject to **two test types** under `src/user/test/`:
+### Unit Testing
+This test focuses on the component, so a **mocking** is required whenever there is a call to another component/service to focus on the tested code and not its behaviour with its external dependencies.  
+For the `user.controller`, we mocked the service call using data stubs located under `__mocks__`.  
+For the `user.service`,which uses calls to the database, we mocked these calls by creating our own **mongoose**-like service. 
+
+### Integration Testing
+This test focuses on the behaviour between different component, assuming that unit tests were done in a good manner, any error in this level will generate from the relation between a component and its external dependencies.  
+in our case we tested the relation between **user.component**,**user.service** and the **mongodb** database.  
+
+### End to End testing
+it aims to test the functionalities and performance in this application. In this test we used the [Cypress](https://www.cypress.io/) which is a fast and easy to learn end to end testing framework.  
+Run this command to open **cypress** interface then choose the corresponding test.
+```sh
+   npm run cypress:open
+   ```
+### User acceptance test
+As the name suggests, this test is conducted by the user to verify wether the developed functionalities meets the requirements or not and finally accepting it or not. It represents the final test phase.
+!!File to be uploaded
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
