@@ -50,7 +50,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-template:latest
-    Deploy:
+  Deploy:
     needs: Package
     runs-on: ubuntu-latest
     steps:
