@@ -1,4 +1,4 @@
-FROM node:14-alpine3.14 AS development
+FROM node:14-alpine3.14
 
 WORKDIR /app
 
@@ -6,12 +6,12 @@ COPY package*.json ./
 
 RUN npm install glob rimraf
 
-RUN npm install --only=development
+RUN npm install --only=production
 
 COPY . .
 
 RUN npm run build
 
-EXPOSE 3000
+EXPOSE 3000/tcp
 
-CMD [ "npm","run","start:dev" ]
+CMD [ "npm","run","start:prod" ]

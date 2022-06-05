@@ -50,23 +50,23 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-template:latest
-    # Deploy:
-    # needs: Package
-    # runs-on: ubuntu-latest
-    # steps:
-    #   - uses: actions/checkout@v2
-    #   - name: Deploy in EC2
-    #     env:
-    #       PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY  }}
-    #       HOSTNAME: ${{ secrets.EC2_HOSTNAME }}
-    #       USER_NAME: ubuntu
+    Deploy:
+    needs: Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy in EC2
+        env:
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY  }}
+          HOSTNAME: ${{ secrets.EC2_HOSTNAME }}
+          USER_NAME: ubuntu
 
-    #     run: |
-    #       echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-    #       ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
-    #         sudo docker container stop nestjs-template
-    #         sudo docker container rm nestjs-template
-    #         sudo docker image rm ${{ secrets.DOCKER_HUB_USERNAME }}//nestjs-template
-    #         sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}//nestjs-template:latest
-    #         sudo docker run -d -p 80:3000 --name nestjs-template ${{ secrets.DOCKER_HUB_USERNAME }}/endorsebase 
-    #       '
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+            sudo docker container stop nestjs-template
+            sudo docker container rm nestjs-template
+            sudo docker image rm ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-template
+            sudo docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-template:latest
+            sudo docker run -d -p 80:3000 --name nestjs-template ${{ secrets.DOCKER_HUB_USERNAME }}/nestjs-template
+          '

@@ -14,7 +14,6 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
   //morgan
   app.use(morgan(configService.get('MORGAN_ENV')));
-  app.use(morgan('dev'));
 
   await app.listen(configService.get('APPLICATION_PORT'));
 }
