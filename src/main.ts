@@ -15,6 +15,7 @@ async function bootstrap() {
   //morgan
   app.use(morgan(configService.get('MORGAN_ENV')));
 
+  // await app.listen(configService.get('APPLICATION_PORT'));
   await app.listen(configService.get('APPLICATION_PORT'));
 }
 bootstrap();
