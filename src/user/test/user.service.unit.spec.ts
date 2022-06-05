@@ -18,38 +18,10 @@ describe('UserService', () => {
     const MongooseApiServiceProvider = {
       provide: getModelToken(User.name),
       useClass: MongooseUserApi,
-      // useFactory: () => ({
-      //   find: () => {
-      //     return { exec: jest.fn(() => {}) };
-      //   },
-      //   findOne: () => {
-      //     return { exec: jest.fn(() => {}) };
-      //   },
-      //   findAll: () => {
-      //     return { exec: jest.fn(() => {}) };
-      //   },
-      //   create: jest.fn(() => {}),
-      //   findByIdAndUpdate: () => {
-      //     return { exec: jest.fn(() => {}) };
-      //   },
-      // }),
     };
 
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        // ConfigModule.forRoot({
-        //   isGlobal: true,
-        // }),
-        // MongooseModule.forRootAsync({
-        //   imports: [ConfigModule],
-        //   useFactory: (configService: ConfigService) => ({
-        //     uri: configService.get('CONNECTION_STRING'),
-        //   }),
-        //   inject: [ConfigService],
-        // }),
-        // MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
-      ],
-      // controllers: [UserController],
+      imports: [],
       providers: [UserService, MongooseApiServiceProvider],
     }).compile();
 

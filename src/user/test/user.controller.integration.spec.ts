@@ -29,8 +29,6 @@ describe('UserController', () => {
         }),
         MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
         UserModule,
-        // MongooseModule.forRoot('mongodb://mongo:27017', { dbName: 'test' }), // we use Mongoose here, but you can also use TypeORM
-        // PostModule,
       ],
     }).compile();
 
