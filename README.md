@@ -16,6 +16,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#tests">Tests</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -67,6 +68,7 @@ In order to run this project and extend its functionalities you need to follow s
    APPLICATION_PORT = 3000  // port is 3000 by default.
    MORGAN_ENV = "dev"
    ```
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
