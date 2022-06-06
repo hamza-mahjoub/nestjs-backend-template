@@ -20,7 +20,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#tests">Tests</a></li>
-    <li><a href="#tests">CI/CD pipeline</a></li>
+    <li><a href="#pipeline">CI/CD pipeline</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -85,10 +85,15 @@ Examples will be provided to showcase some features of this project.
 
 <!-- Tests EXAMPLES -->
 ## Usage
-- Run the tests using 
+- you can run all the tests at once using 
 ```sh
    npm run test
    ```
+or select the file test  
+```sh
+   npm run test -- testfile.spec.ts
+   ```
+![image](https://user-images.githubusercontent.com/60366675/172180800-990ed042-01d3-43de-8f5c-4b9e063abafe.png)
    
 The user module is subject to **two test types** under `src/user/test/`:
 ### Unit Testing
@@ -113,6 +118,8 @@ As the name suggests, this test is conducted by the user to verify wether the de
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## CI/CD pipeline
+<p align="right">(<a href="#top">back to top</a>)</p>
 ## Roadmap
 
 - ✅ [Morgan middleware](https://www.npmjs.com/package/morgan)
