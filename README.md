@@ -9,6 +9,8 @@
       <a href="#about-the-project">About The Project</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
+        <li><a href="#testing-tools">Testing tools</a></li>
+        <li><a href="#containerization-solution">Containerization Solution</a></li>
       </ul>
     </li>
     <li>
@@ -37,6 +39,13 @@ This repository contains implemented functionalities that can be reused and exte
 * [NestJs](https://nestjs.com/), the progressive Node.js framework for building server-side applications.
 * [MongoDB](https://www.mongodb.com/fr-fr), the no SQL database.
 * [NPM](https://www.npmjs.com/) as package manager.
+
+### Testing Tools
+* [JEST](https://jestjs.io/fr/)
+* [Cypress](https://www.cypress.io/)
+
+### Containerization Solution
+* [Docker](https://www.docker.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -69,6 +78,19 @@ In order to run this project and extend its functionalities you need to follow s
    APPLICATION_PORT = 3000  // port is 3000 by default.
    MORGAN_ENV = "dev"
    ```
+ **Or**  
+ 
+ 1. make sure you have docker installed.
+ 2. pull the image : 
+ ``` sh
+ docker pull hamzamahjoub/nestjs-template
+ ```
+ 3. run the following docker run command:  
+  ```
+ docker pull hamzamahjoub/nestjs-template
+ ``` sh
+ sudo docker run -d -p 3000:3000 --name nestjs-template hamzamahjoub/nestjs-template
+ ```
    
 <p align="right">(<a href="#top">back to top</a>)</p>
 
