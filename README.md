@@ -141,6 +141,8 @@ Run this command to open **cypress** interface then choose the corresponding tes
 ```sh
    npm run cypress:open
    ```
+ ![image](https://user-images.githubusercontent.com/60366675/172248981-13fadc53-0757-479d-8bf1-8b7e0736b4da.png)
+
 ### User acceptance test
 As the name suggests, this test is conducted by the user to verify wether the developed functionalities meets the requirements or not and finally accepting it or not. It represents the final test phase.
 !!File to be uploaded
