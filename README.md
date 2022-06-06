@@ -20,7 +20,7 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#tests">Tests</a></li>
-    <li><a href="#pipeline">CI/CD pipeline</a></li>
+    <li><a href="#ci/cd-pipeline">CI/CD pipeline</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -84,7 +84,7 @@ Examples will be provided to showcase some features of this project.
 
 
 <!-- Tests EXAMPLES -->
-## Usage
+## Tests
 - you can run all the tests at once using 
 ```sh
    npm run test
