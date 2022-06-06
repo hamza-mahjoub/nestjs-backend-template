@@ -41,11 +41,11 @@ This repository contains implemented functionalities that can be reused and exte
 * [NPM](https://www.npmjs.com/) as package manager.
 
 ### Testing Tools
-* [JEST](https://jestjs.io/fr/)
-* [Cypress](https://www.cypress.io/)
+* [JEST](https://jestjs.io/fr/), a quality testing framework.
+* [Cypress](https://www.cypress.io/), an end to end testing tool.
 
 ### Containerization Solution
-* [Docker](https://www.docker.com/)
+* [Docker](https://www.docker.com/), a solution for building,sharing and running application images.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -223,7 +223,8 @@ It follows these steps:
 In order to acces the site a **security group** must be configured to let access on port **3000**(default nestjs port).  
 You can view the backend via the following link : http://13.125.232.134:3000/
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p>  
+
 ## Roadmap
 
 - ✅ [Morgan middleware](https://www.npmjs.com/package/morgan)
