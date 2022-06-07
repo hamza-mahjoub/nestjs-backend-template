@@ -167,7 +167,8 @@ Run this command to open **cypress** interface then choose the corresponding tes
 
 ### User acceptance test
 As the name suggests, this test is conducted by the user to verify wether the developed functionalities meets the requirements or not and finally accepting it or not. It represents the final test phase.
-!!File to be uploaded
+
+Check **user-acceptance-test-plan.pdf**.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
