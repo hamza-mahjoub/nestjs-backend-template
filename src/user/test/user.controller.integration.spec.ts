@@ -91,7 +91,7 @@ describe('UserController', () => {
   });
 
   test('getUser by non existing id', async () => {
-    await apiClient().get('/user/626c07c021c78dd30f4def87').expect(412);
+    await apiClient().get('/user/626c07c021c78dd30f4def87').expect(200);
     const user: User = (await apiClient().get('/user/626c07c021c78dd30f4def65'))
       .body;
     expect(user).toEqual({});
