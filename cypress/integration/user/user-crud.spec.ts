@@ -32,9 +32,12 @@ describe('User CRUD', () => {
   });
 
   it('getUser by non valid id', () => {
-    cy.request(`user/azers`).then((response) => {
-      expect(response.status).to.eq(500);
-    });
+    cy.request({ url: `user/azers`, failOnStatusCode: false }).then(
+      (response) => {
+        expect(response.status).to.eq(412);
+        expect(response.body.message).to.eq('Not a valid mongoDb id!');
+      },
+    );
   });
 
   const userCreateDto = {
@@ -66,7 +69,7 @@ describe('User CRUD', () => {
   });
 
   it('updateUserById', () => {
-    cy.request('PATCH', `/user/${createdUserId}`, {
+    cy.request('POST', `/user/${createdUserId}`, {
       fullAddress: {
         address: 'Sousse',
         city: 'Sousse',
@@ -75,7 +78,7 @@ describe('User CRUD', () => {
       },
     }).then((response) => {
       expect(response.status).to.eq(201);
-      expect(response.body.fullAddress).to.eq({
+      expect(response.body.fullAddress).to.deep.eq({
         address: 'Sousse',
         city: 'Sousse',
         country: 'Tunis',

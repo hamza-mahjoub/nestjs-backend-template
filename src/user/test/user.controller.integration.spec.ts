@@ -91,14 +91,14 @@ describe('UserController', () => {
   });
 
   test('getUser by non existing id', async () => {
-    await apiClient().get('/user/626c07c021c78dd30f4def87').expect(200);
+    await apiClient().get('/user/626c07c021c78dd30f4def87').expect(412);
     const user: User = (await apiClient().get('/user/626c07c021c78dd30f4def65'))
       .body;
     expect(user).toEqual({});
   });
 
   test('getUser by non valid id', async () => {
-    await apiClient().get('/user/azers').expect(500);
+    await apiClient().get('/user/azers').expect(412);
   });
 
   test('updateUserById', async () => {
